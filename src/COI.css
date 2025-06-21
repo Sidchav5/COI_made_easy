@@ -1,0 +1,612 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --saffron: #ff9933;
+  --white: #ffffff;
+  --green: #138808;
+  --light-green: #e8f5e9;
+  --mid-green: #81c784;
+  --dark-green: #1b5e20;
+  --grey: #37474f;
+  --light-grey: #f5f7fa;
+  --heading-color: #e65100;
+  --highlight: #43a047;
+  --background: linear-gradient(135deg, var(--saffron) 0%, #ffffff 40%, var(--green) 100%);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  min-height: 100vh;
+  color: var(--grey);
+  line-height: 1.6;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.navbar-title {
+  color: var(--heading-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-title::before {
+  content: "🇮🇳";
+  font-size: 1.4rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--grey);
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navbar-links a:hover {
+  color: var(--dark-green);
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--dark-green);
+  transition: var(--transition);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* ========== MAIN CONTAINER ========== */
+.coi-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: #2b3a5c;
+}
+
+/* Section Heading */
+.coi-container h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff3e0 0%, #fff8e1 100%);
+  border-bottom: 4px solid var(--heading-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.coi-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.coi-container h2:hover::after {
+  transform: scaleX(1);
+}
+
+/* ========== PARTS GRID ========== */
+.part-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Individual Part Card */
+.part-card {
+  background: var(--white);
+  padding: 1.8rem;
+  border-radius: 16px;
+  border: 2px solid var(--mid-green);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.part-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  background-color: var(--light-green);
+  border-color: var(--highlight);
+}
+
+.part-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark-green);
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.part-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+  border-radius: 3px;
+}
+
+.part-range {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed #ccc;
+}
+
+/* ========== ARTICLE LIST ========== */
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+}
+
+.article-item {
+  position: relative;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  background: var(--light-grey);
+  border-left: 6px solid var(--highlight);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.article-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(220, 237, 200, 0.8) 0%, rgba(241, 248, 233, 0.8) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.article-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.article-item:hover::before {
+  opacity: 1;
+}
+
+.article-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--dark-green);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.article-title::before {
+  content: "•";
+  color: var(--highlight);
+  font-size: 1.5rem;
+}
+
+.article-content {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--grey);
+  text-align: justify;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: center;
+  color: #607d8b;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 4rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
+
+/* ========== Loading Animation ========== */
+.loading {
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 5rem 0;
+  color: #607d8b;
+  font-style: italic;
+  position: relative;
+}
+
+.loading::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(96, 125, 139, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--highlight);
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========== Thought Section ========== */
+.Thought {
+  display: flex;
+  align-items: flex-start; /* Changed from center to flex-start for better alignment */
+  justify-content: space-between; /* Ensures maximum space between items */
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  background-color: #c5a06c;
+}
+
+/* Remove flex-wrap since we don't want items to wrap on larger screens */
+/* Remove align-items and justify-content from ::before as they're not needed */
+.Thought::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 153, 51, 0.1) 0%, rgba(19, 136, 8, 0.1) 100%);
+  z-index: -1;
+  animation: rotate 20s linear infinite;
+}
+
+.ambedkar-image {
+  background-image: url(./Images/DrAmbedkar.jpeg);
+  width: 280px;
+  height: 350px;
+  border-radius: 16px;
+  border: 3px solid var(--dark-green);
+  box-shadow: var(--shadow-md);
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition);
+  flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.ambedkar-quote {
+  margin-top: 60px;
+  max-width: 600px;
+  font-size: 1.25rem;
+  color: var(--grey);
+  font-style: italic;
+  line-height: 1.8;
+  position: relative;
+  padding: 1rem;
+  flex-grow: 1; /* Allows quote to take remaining space */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .Thought {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .ambedkar-image {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .ambedkar-quote {
+    text-align: center;
+  }
+  
+  .ambedkar-quote span {
+    text-align: center;
+  }
+}
+/* ========== Buttons ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(135deg, var(--heading-color), #f57c00);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(230, 81, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #bf360c, #e65100);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 81, 0, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--heading-color);
+  color: var(--heading-color);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: rgba(230, 81, 0, 0.1);
+}
+
+/* ========== Fancy Scrollbar ========== */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--saffron), var(--green));
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #ff8a00, #0d7a00);
+}
+
+/* ========== Responsive Tweaks ========== */
+@media (max-width: 992px) {
+  .coi-container {
+    padding: 2rem;
+    margin: 2rem 1rem;
+  }
+  
+  .Thought {
+    padding: 2rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navbar-links {
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  
+  .coi-container h2 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  
+  .part-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .Thought {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .ambedkar-quote {
+    font-size: 1.1rem;
+  }
+  
+  .ambedkar-quote span {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .coi-container {
+    padding: 1.5rem;
+  }
+  
+  .article-item {
+    padding: 1.2rem;
+  }
+  
+  .ambedkar-image {
+    width: 220px;
+    height: 280px;
+  }
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.coi-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.part-card {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+/* Delay animations for each card */
+.part-card:nth-child(1) { animation-delay: 0.1s; }
+.part-card:nth-child(2) { animation-delay: 0.2s; }
+.part-card:nth-child(3) { animation-delay: 0.3s; }
+.part-card:nth-child(4) { animation-delay: 0.4s; }
+.part-card:nth-child(5) { animation-delay: 0.5s; }
+.part-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ========== Utility Classes ========== */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+.ambedkar-quote-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  background: #f1f8e9;
+  border-left: 6px solid #33691e;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+  color: #2e7d32;
+}
+
+.quote-image-section {
+  width: 160px;
+  height: 200px;
+  background-image: url('./Images/DrAmbedkar.jpeg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.quote-text-section {
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.quote-text-section p {
+  margin-bottom: 10px;
+}
+
+.quote-text-section span {
+  font-style: italic;
+  font-weight: 500;
+  color: #1b5e20;
+}

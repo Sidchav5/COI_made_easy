@@ -1,0 +1,441 @@
+/* src/App.css */
+* {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: border-box;
+}
+
+.hero-section {
+  background-image: url("./Images/Hero.jpg");
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/**NAV**/
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-name {
+  color: white;
+  font-size: 0.85rem;
+  display: flex;
+  padding-top: 20px;
+  width: 50%;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.nav-main, .nav-signUp, .nav-login, .nav-profile {
+  color: rgb(241, 238, 237);
+  font-size: 0.85rem;
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.nav-name-text {
+  padding-left: 10px;
+  font-family:'Times New Roman', Times, serif;
+  font-size: larger;
+  font-weight: bold;
+  margin-right: 300px;
+  color: #126b98;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(68, 56, 78);
+}
+
+a:hover {
+  color: rgb(68, 62, 62);
+}
+
+/**Heading**/
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  text-align: center;
+  padding: 20px;
+}
+
+.poster-name {
+  margin: 60px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  background-color: rgba(144, 167, 179, 0.8);
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-name:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Color classes */
+.white {
+  color: white;
+}
+
+.org {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+
+/* Poster Info */
+.poster-info {
+  max-width: 850px;
+  margin: -20px auto;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-info:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  color: #efefef;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .poster-name {
+    font-size: 2rem;
+    padding: 15px 20px;
+  }
+
+  .poster-info {
+    font-size: 1rem;
+    padding: 20px;
+  }
+}
+
+
+
+footer {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-logo i {
+  margin-right: 8px;
+  color: #f8b400;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #bbb;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f8b400;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  color: #bbb;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #f8b400;
+}
+
+.footer-credit {
+  font-size: 12px;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* cards */
+
+.card-section {
+  padding: 40px 0;
+  background-color: #e6e6e6;
+}
+
+.head {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #1c1c1c;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card1 {
+  background-color: #fff;
+  width: 18rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-img-top {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* Background for Auth Pages */
+.auth-bg {
+  background-image: url("./Images/Hero.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  display: flex;
+  align-items: flex-start; /* Change from center to flex-start */
+  justify-content: center;
+  padding-top: 50px; /* Increase this to control vertical spacing */
+  position: relative;
+}
+
+/* Form Container */
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 200px;
+}
+
+/* Inputs & Button */
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #126b98;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Preamble */
+/* General Layout */
+/* Hero Section */
+.heroImage {
+  background-image: url('./Images/Hero.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Preamble-head {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Preamble Section Container */
+.preamble-container {
+  max-width: 1100px;
+  margin: -100px auto 60px auto;
+  padding: 40px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+/* Image of Preamble */
+.p-pic {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.p-pic img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.p-pic img:hover {
+  transform: scale(1.02);
+}
+
+/* Preamble Text Content */
+.preamble-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.preamble-subheading {
+  font-size: 1.6rem;
+  color: #126b98;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* List of Key Terms */
+.preamble-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.preamble-list li {
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 22px;
+}
+
+.preamble-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #126b98;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.preamble-list a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.preamble-list a:hover {
+  text-decoration: underline;
+  color: #084298;
+}
+
+.p-pic {
+  background-image: url('./Images/Preamble.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 800px;
+  margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Preamble-head {
+    font-size: 2.2rem;
+  }
+
+  .preamble-container {
+    margin: -60px 20px 40px 20px;
+    padding: 30px 20px;
+  }
+
+  .preamble-description {
+    text-align: justify;
+  }
+}

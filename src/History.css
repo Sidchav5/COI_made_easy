@@ -1,0 +1,137 @@
+.history-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.7;
+  color: #263238;
+}
+
+.history-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #bf360c;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #bf360c;
+  padding-bottom: 10px;
+}
+
+.history-container section {
+  margin-bottom: 40px;
+}
+
+.history-container h3 {
+  color: #1b5e20;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.history-container p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.history-container ul {
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 0.98rem;
+  margin-top: 8px;
+}
+
+.history-container li {
+  margin-bottom: 10px;
+}
+
+/* Constituent Assembly Thought Component */
+/* Constituent Assembly Component - Image Above Text */
+.Thought {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 20px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.Thought::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+}
+
+.ambedkar-image {
+  background-image: url(./Images/draft.jpeg);
+  width: 400px;
+  height: 250px;
+  border-radius: 12px;
+  border: 3px solid var(--dark-green);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: -20px;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.ambedkar-image:hover {
+  transform: scale(1.02);
+}
+
+.ambedkar-quote {
+  width: 100%;
+  font-size: 18px;
+  color: var(--grey);
+  line-height: 1.8;
+  padding: 1rem;
+  text-align: justify; /* Changed from center to justify */
+  background: rgba(241, 248, 233, 0.3);
+  border-radius: 12px;
+  text-justify: inter-word; /* Improves word spacing in justified text */
+}
+
+.ambedkar-quote p {
+  margin-bottom: 1rem;
+  hyphens: auto; /* Enables automatic hyphenation for better justification */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .Thought {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+  
+  .ambedkar-image {
+    height: 250px;
+  }
+  
+  .ambedkar-quote {
+    font-size: 1rem;
+    padding: 1rem 0;
+    text-align: left; /* Switch to left-aligned on mobile for better readability */
+    hyphens: none; /* Disable hyphenation on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .ambedkar-image {
+    height: 200px;
+  }
+  
+  .ambedkar-quote p {
+    text-align: left; /* Ensure left alignment on smallest screens */
+  }
+}
