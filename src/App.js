@@ -33,7 +33,7 @@ import Duty11 from './components/Duty11';
 import History from './components/History';
 import AIConstitutionGuide from './components/AIConstitutionGuide';
 import Chatbot from './components/ChatBot';
-
+import Quiz from './components/Quiz';
 function App() {
   return (
     <Router>
@@ -84,7 +84,8 @@ function App() {
         <Route path="/history" element={<History />} />
 
          <Route path="/ChatBot" element={<Chatbot />} />
-       
+       <Route path="/quiz" element={<Quiz />} />
+
       </Routes>
     </Router>
   );

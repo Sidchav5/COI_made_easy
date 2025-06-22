@@ -14,6 +14,7 @@ function Navbar() {
       <div className="nav-main"><Link to="/register">Register</Link></div>
       <div className="nav-main"><Link to="/login">Login</Link></div>
       <div className="nav-main"><a href="/preamble">Preamble</a></div>
+      <div className="nav-main"><a href="/quiz">Quiz</a></div>
     </nav>
   );
 }

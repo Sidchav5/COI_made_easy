@@ -1,52 +1,328 @@
 /* src/components/Chatbot.css */
 .chatbot-container {
-  background: #ffffff;
-  border: 2px solid #dcedc8;
-  padding: 30px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 2px solid var(--mid-green);
+  padding: 2.5rem;
+  border-radius: 18px;
   max-width: 900px;
-  margin: 50px auto;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin: 4rem auto;
+  box-shadow: 
+    0 12px 36px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.05);
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.chatbot-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--saffron), var(--green));
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .chatbot-container h2 {
-  color: #1b5e20;
-  margin-bottom: 20px;
+  color: var(--dark-green);
+  margin-bottom: 1.8rem;
   text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.chatbot-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: var(--highlight);
+  border-radius: 2px;
 }
 
 .chatbot-container textarea {
   width: 100%;
-  height: 120px;
-  padding: 15px;
-  border: 1px solid #cfd8dc;
-  border-radius: 10px;
-  font-size: 1rem;
-  margin-bottom: 20px;
+  height: 150px;
+  padding: 1.2rem;
+  border: 2px solid #cfd8dc;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
   resize: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.chatbot-container textarea:focus {
+  outline: none;
+  border-color: var(--highlight);
+  box-shadow: 
+    inset 0 2px 6px rgba(0, 0, 0, 0.05),
+    0 0 0 3px rgba(67, 160, 71, 0.2);
 }
 
 .chatbot-container button {
-  background: #1b5e20;
+  background: linear-gradient(135deg, var(--dark-green), #2e7d32);
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.8rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+  min-width: 180px;
 }
 
 .chatbot-container button:hover {
-  background: #2e7d32;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.4);
 }
 
+.chatbot-container button:active {
+  transform: translateY(0);
+}
+
+.chatbot-container button:disabled {
+  background: #bdbdbd;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* src/components/Chatbot.css */
 .chatbot-response {
-  margin-top: 30px;
-  padding: 20px;
-  background: #f1f8e9;
-  border-left: 6px solid #33691e;
-  border-radius: 10px;
-  color: #37474f;
+  margin-top: 2rem;
+  padding: 1.8rem;
+  background: rgba(241, 248, 233, 0.7);
+  border-left: 6px solid var(--highlight);
+  border-radius: 12px;
+  color: var(--grey);
+  animation: slideUp 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.chatbot-response::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%, 
+    rgba(232, 245, 233, 0.6) 100%);
+  z-index: -1;
+}
+
+.chatbot-response strong {
+  color: var(--dark-green);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.chatbot-response strong::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--saffron);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.chatbot-response p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.chatbot-response p:last-child {
+  margin-bottom: 0;
+}
+
+/* For multi-paragraph responses */
+.chatbot-response div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Special formatting for constitutional references */
+.chatbot-response em {
+  color: var(--heading-color);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.chatbot-response a {
+  color: var(--dark-green);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--mid-green);
+  transition: all 0.2s ease;
+}
+
+.chatbot-response a:hover {
+  color: var(--heading-color);
+  border-bottom-style: solid;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chatbot-response {
+    padding: 1.4rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  .chatbot-response strong {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .chatbot-response p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.loading-dots {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.loading-dots span {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chatbot-container {
+    padding: 1.8rem;
+    margin: 2rem 1rem;
+    border-radius: 16px;
+  }
+  
+  .chatbot-container h2 {
+    font-size: 1.6rem;
+  }
+  
+  .chatbot-container textarea {
+    height: 120px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-container {
+    padding: 1.5rem;
+  }
+  
+  .chatbot-response {
+    padding: 1.2rem;
+  }
+}
+/* Add these to your existing Chatbot.css */
+.response-heading {
+  display: block;
+  color: var(--dark-green);
+  margin: 1.5rem 0 1rem;
+  font-size: 1.2rem;
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.response-heading::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--saffron);
+  font-size: 2rem;
+  line-height: 0.8;
+}
+
+.chatbot-response ul {
+  list-style-type: none;
+  padding-left: 2rem;
+  margin: 1rem 0;
+}
+
+.chatbot-response li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 2rem;
+  text-align: justify;
+}
+
+.chatbot-response li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--highlight);
+}
+
+/* Nested list styling */
+.chatbot-response ul ul {
+  padding-left: 2rem;
+  margin: 0.5rem 0;
+}
+
+.chatbot-response ul ul li::before {
+  content: "›";
+}
+
+/* Bold text within lists */
+.chatbot-response li strong {
+  color: var(--heading-color);
+  font-weight: 600;
+  padding-left: 0;
+}
+
+.chatbot-response li strong::before {
+  content: none;
 }
