@@ -16,7 +16,7 @@ function HeroSection() {
         </div>
         <div className="poster-info">
           <p>
-            Discover the Constitution of India in a simplified and structured way. Browse through Parts, Fundamental Rights, Duties, and History. Ask legal questions and get AI-powered answers with article references in real time.
+            Discover the Constitution of India in a simplified and structured way. Browse through Parts, Fundamental Rights, Duties, and History. Ask legal questions and get AI-powered answers with article references in real time. Test your knowledge using Quiz !
           </p>
         </div>
       </div>

@@ -2,7 +2,8 @@
   import Navbar from './Navbar';
   import preambleImage from '../Images/Preamble.png';
   import '../preamble.css';
-
+  import Footer from './Footer';
+  
   function Preamble() {
     return (
       <>
@@ -82,6 +83,7 @@ Though not legally enforceable, the Supreme Court, in the Kesavananda Bharati Ca
             </li>
           </ul>
         </div>
+        <Footer/>
       </>
     );
   }

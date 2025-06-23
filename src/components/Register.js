@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../App.css';
 import Navbar from './Navbar';
-
+import Footer from './Footer';
 const Register = () => {
   const [form, setForm] = useState({ username: '', email: '', password: '' });
 
@@ -30,6 +30,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

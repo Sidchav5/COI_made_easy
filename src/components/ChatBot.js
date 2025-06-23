@@ -19,6 +19,7 @@ export default function Chatbot() {
         headers: {
           'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({ question: query })
       });
       const data = await res.json();
