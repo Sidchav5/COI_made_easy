@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+📜 Constitution of India – Made Easy (AI + Web-Based Educational Platform)
+📋 Project Overview
+This project is an interactive, AI-powered educational platform focused on making the Constitution of India accessible, understandable, and engaging. Users can explore part-wise articles, fundamental rights and duties, and historical context. It includes a smart AI chatbot and a Constitution quiz feature powered by Google Gemini AI. Authentication and leaderboard tracking enhance engagement and personalization.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🛠️ Tools and Technologies Used
+⚙️ Backend
+Flask (Python) – REST API for authentication, quiz, chatbot, and article data
 
-## Available Scripts
+Flask-Login – Secure user session management
 
-In the project directory, you can run:
+MySQL – User and quiz data storage
 
-### `npm start`
+Google Generative AI (Gemini 1.5 Flash) – AI-based Q&A and quiz generation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🎨 Frontend
+React JS – Responsive and dynamic UI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React Router – Frontend navigation
 
-### `npm test`
+Bootstrap + Custom CSS – Styling and layout
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Fetch API – Frontend-to-backend communication with session-based auth
 
-### `npm run build`
+🔗 Cloud Services
+Google Gemini API – Legal Q&A and quiz content generation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+MySQL (local or cloud) – Data persistence (users, scores, quiz attempts)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🔍 Use Case & Features
+🔓 User Authentication
+Users can register, login, and logout securely.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Session-based authentication ensures only logged-in users can access AI features (chatbot, quiz).
 
-### `npm run eject`
+📚 Constitution Explorer
+View All 25 Parts of the Constitution grouped properly (Part I to XXI).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each part includes relevant articles, titles, and descriptions in a structured format.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Smooth UI navigation between parts and articles.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🤖 AI-Powered Chatbot (Ask The Constitution)
+Built using Gemini 1.5 Flash model from Google.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Handles legal and constitutional queries (e.g., rights, duties, fundamental laws).
 
-## Learn More
+Responds only to Constitution-related questions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Shows ⚠️ warning if user inputs off-topic questions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🧠 AI Quiz Generator
+Automatically generates 10 MCQs from the Indian Constitution:
 
-### Code Splitting
+3 Easy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4 Medium
 
-### Analyzing the Bundle Size
+3 Hard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Each question includes 4 options and one correct answer.
 
-### Making a Progressive Web App
+No repetition of questions; all quizzes are dynamically created using Gemini AI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🏆 Leaderboard + Scoring System
+Quiz score is tracked and stored per user.
 
-### Advanced Configuration
+Users’ highest scores are displayed in the Top 5 Leaderboard.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Smart feedback/remarks based on score:
 
-### Deployment
+🎉 Excellent (9+)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👍 Good (6–8)
 
-### `npm run build` fails to minify
+📖 Needs Improvement (≤5)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+⚙️ System Workflow
+text
+Copy
+Edit
+User Login/Register ⟶ React Frontend ⟶ Flask API ⟶ MySQL
+
+             🔽                        🔽                        🔽
+      Constitution Pages        Ask Bot Feature            Quiz Section
+           (Static)          (Gemini AI, via Flask)    (Gemini AI, via Flask)
+
+                                🔁                            🔁
+                          User Auth & Session           Quiz Submission +
+                                                        Leaderboard Storage
+📊 Results & Highlights
+✅ Part-wise, well-structured Constitution content.
+
+✅ Real-time AI Q&A for Constitution-based legal queries.
+
+✅ AI-generated quiz content – dynamic, non-repetitive, and difficulty-balanced.
+
+✅ User-based scoring, remarks, and secure session handling.
+
+✅ Leaderboard keeps users engaged with performance comparison.
+
+🧪 Educational Applications
+📖 For students preparing for civics, law, UPSC, and general awareness.
+
+🏫 Can be used by teachers/institutions to make Indian Constitution teaching interactive.
+
+🤖 Demonstrates integration of LLMs with educational apps.
+
+🛡️ Note
+This project is for educational and academic use. AI answers are generated based on trained data and may not always match official legal interpretations. For legal advice, consult verified sources or experts.
